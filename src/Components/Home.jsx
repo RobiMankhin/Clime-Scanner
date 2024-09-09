@@ -47,11 +47,14 @@ const Home = () => {
   const weatherCondition = weatherData?.weather[0].main;
   const correctImage = weatherImages[weatherCondition];
   return (
-    <div className="rounded-md py-6 bg-gray-900 ">
-      <div className="flex flex-col items-center px-2 py-6 rounded-md mx-auto w-[320px] bg-slate-500">
+    <div className="rounded-md py-5 bg-gray-900">
+      <div className="text-center text-white text-3xl font-bold mb-3">
+        ClimeScanner
+      </div>
+      <div className="flex flex-col items-center px-2 py-6 rounded-md mx-auto w-[320px] md:w-[410px] bg-slate-500">
         <div className="flex gap-3 ">
           <input
-            className="w-full px-2 py-1 rounded-lg text-black"
+            className="md:w-[250px] w-[210px] px-2 py-1 rounded-lg text-black"
             type="text"
             placeholder="Enter A city name"
             onChange={(e) => setsearchCity(e.target.value)}
@@ -72,7 +75,7 @@ const Home = () => {
             <>
               <img
                 src={correctImage}
-                className="w-[200px] h-[200px]"
+                className="w-[200px] md:w-[280px] h-[200px] md:h-[225px]"
                 alt="Weather Icon"
               />
               <h1 className="font-semibold text-5xl">
@@ -106,6 +109,9 @@ const Home = () => {
             <p className="text-2xl font-semibold">Loading...</p> //showing this while data is being
           )}
         </div>
+      </div>
+      <div className="text-white text-xl font-semibold text-center mt-2">
+        Check Weather Now. Stay informed
       </div>
     </div>
   );
